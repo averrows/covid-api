@@ -7,6 +7,14 @@ function generateFileNameBasedOnTodayDate(){
     return `${month}-${date}-${year}.csv`
 }
 
+function generateFileName(date, month, year){
+    const dateRender = date >= 10 ? date : '0'+date
+    const monthRender = month >= 10 ? month : '0'+(month)
+
+    return `${monthRender}-${dateRender}-${year}.csv`
+}
+
 module.exports = {
-    generateFileNameBasedOnTodayDate
+    generateFileNameBasedOnTodayDate,
+    generateFileName
 }
