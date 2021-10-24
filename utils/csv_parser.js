@@ -1,15 +1,15 @@
 const parse = require('csvtojson')
 
 /**
- * @param {string} fileDir:
+ * @param {string} dataString:
  * @return {Object}
  */
-async function parseCSVToObject(fileDir){
+async function parseCSVToObject(dataString){
     let result
     try{
-        result = await parse({delimiter:','}).fromFile(fileDir)
+        result = await parse({delimiter:','}).fromString(dataString)
     } catch (e) {
-        console.log("ERROR ON PARSING CSV ", fileDir)
+        console.log("ERROR ON PARSING CSV ")
     }
 
     return result
