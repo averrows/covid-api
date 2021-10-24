@@ -14,3 +14,5 @@ async function parseCSVToObject(fileDir){
 
     return result
 }
+
+module.exports = {parseCSVToObject}
